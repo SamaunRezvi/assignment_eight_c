@@ -1,0 +1,110 @@
+<svg width="1120" height="420" viewBox="0 0 1120 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title description">
+  <title id="title">StudioSpace - book creative studios by the hour</title>
+  <desc id="description">An animated isometric photo studio with a glowing softbox light, a camera on a tripod and floating booking cards in StudioSpace's amber and charcoal palette.</desc>
+  <defs>
+    <linearGradient id="background" x1="30" y1="20" x2="1100" y2="420" gradientUnits="userSpaceOnUse"><stop stop-color="#241B12"/><stop offset="1" stop-color="#0D0A07"/></linearGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F7C26B"/><stop offset="1" stop-color="#D9831F"/></linearGradient>
+    <linearGradient id="boxTop" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#5A4B3B"/><stop offset="1" stop-color="#3A2F25"/></linearGradient>
+    <linearGradient id="boxLeft" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#33291F"/><stop offset="1" stop-color="#1C150F"/></linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFE9B8"/><stop offset=".55" stop-color="#F5B84B"/><stop offset="1" stop-color="#D9831F"/></linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F7C26B" stop-opacity=".55"/><stop offset="1" stop-color="#F7C26B" stop-opacity="0"/></linearGradient>
+    <linearGradient id="camTop" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#6A5A48"/><stop offset="1" stop-color="#43372B"/></linearGradient>
+    <linearGradient id="camLeft" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#3A2F25"/><stop offset="1" stop-color="#211A13"/></linearGradient>
+    <linearGradient id="camRight" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#54463A"/><stop offset="1" stop-color="#32281F"/></linearGradient>
+    <radialGradient id="lens" cx=".35" cy=".3" r=".8"><stop stop-color="#FFE9B8"/><stop offset=".4" stop-color="#E29A2E"/><stop offset="1" stop-color="#5A3410"/></radialGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#3B2D1D"/><stop offset="1" stop-color="#1E1610"/></linearGradient>
+    <filter id="ambient" x="-50%" y="-100%" width="200%" height="300%"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="cardShadow" x="-30%" y="-50%" width="170%" height="220%"><feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#050302" flood-opacity=".55"/></filter>
+    <style>
+      text { font-family: Arial, Helvetica, sans-serif; }
+      .serif { font-family: Georgia, 'Times New Roman', serif; }
+      .light-float { animation: light-float 5s ease-in-out infinite; transform-origin: 720px 200px; }
+      .cam-float { animation: cam-float 6s ease-in-out -2s infinite; }
+      .card-float { animation: card-float 6s ease-in-out infinite; }
+      .card-float-later { animation: card-float 6s ease-in-out -3s infinite; }
+      .pulse { animation: pulse 3s ease-in-out infinite; }
+      .spin { animation: spin 18s linear infinite; transform-origin: 19px 19px; }
+      @keyframes light-float { 0%,100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-9px) rotate(1deg); } }
+      @keyframes cam-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+      @keyframes card-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+      @keyframes pulse { 0%,100% { opacity: .35; } 50% { opacity: .9; } }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      @media (prefers-reduced-motion: reduce) { .light-float, .cam-float, .card-float, .card-float-later, .pulse, .spin { animation: none; } }
+    </style>
+  </defs>
+
+  <rect x="1" y="1" width="1118" height="418" rx="28" fill="url(#background)" stroke="#5B4528" stroke-width="2"/>
+  <path d="M58 93H1062" stroke="#3D2F1D"/>
+
+  <!-- ambient glow behind the scene -->
+  <ellipse class="pulse" cx="800" cy="250" rx="200" ry="90" fill="#E29A2E" opacity=".35" filter="url(#ambient)"/>
+
+  <!-- isometric floor grid -->
+  <g opacity=".3" stroke="#B07A2E">
+    <path d="M600 335 800 250 1050 340M630 350 825 266 1075 356M665 365 855 282 1085 372M705 382 890 297 1085 388"/>
+    <path d="M642 318 835 398M682 301 875 381M722 284 915 364M762 267 955 347M802 250 995 330"/>
+  </g>
+
+  <!-- brand -->
+  <g transform="translate(58 34)">
+    <rect width="38" height="38" rx="11" fill="url(#amber)"/>
+    <g class="spin" transform="translate(7 7)" stroke="#1C1814" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="m14.31 8 5.74 9.94M9.69 8h11.48m-13.79 4 5.74-9.94M9.69 16 3.95 6.06M14.31 16H2.83m13.79-4-5.74 9.94"/>
+    </g>
+    <text class="serif" x="52" y="26" fill="#F6EBD9" font-size="22" font-weight="700">StudioSpace</text>
+  </g>
+  <text x="1062" y="58" text-anchor="end" fill="#A38A63" font-size="13" letter-spacing="2">PEER-TO-PEER CREATIVE WORKSPACES</text>
+
+  <!-- headline -->
+  <text class="serif" x="58" y="172" fill="#F6EBD9" font-size="44" font-weight="700">Book creative studios</text>
+  <text class="serif" x="58" y="224" fill="#F5B84B" font-size="44" font-weight="700">by the hour.</text>
+  <text x="58" y="266" fill="#CDBA97" font-size="17">Discover, compare and reserve photo studios, film stages,</text>
+  <text x="58" y="290" fill="#CDBA97" font-size="17">podcast lounges, music suites and art workshops.</text>
+
+  <g font-size="13" font-weight="700" fill="#F6EBD9">
+    <rect x="58" y="318" width="76" height="30" rx="15" fill="#2F2418" stroke="#6B5130"/><text x="96" y="338" text-anchor="middle">Photo</text>
+    <rect x="144" y="318" width="64" height="30" rx="15" fill="#2F2418" stroke="#6B5130"/><text x="176" y="338" text-anchor="middle">Film</text>
+    <rect x="218" y="318" width="86" height="30" rx="15" fill="#2F2418" stroke="#6B5130"/><text x="261" y="338" text-anchor="middle">Podcast</text>
+    <rect x="314" y="318" width="74" height="30" rx="15" fill="#2F2418" stroke="#6B5130"/><text x="351" y="338" text-anchor="middle">Music</text>
+    <rect x="398" y="318" width="100" height="30" rx="15" fill="#2F2418" stroke="#6B5130"/><text x="448" y="338" text-anchor="middle">Workshop</text>
+  </g>
+
+  <!-- softbox light -->
+  <g class="light-float">
+    <path class="pulse" d="M770 175 770 235 980 338 900 262Z" fill="url(#beam)"/>
+    <g>
+      <path d="M720 150 770 173 720 196 670 173Z" fill="url(#boxTop)"/>
+      <path d="M670 173 720 196 720 256 670 233Z" fill="url(#boxLeft)"/>
+      <path d="M720 196 770 173 770 233 720 256Z" fill="url(#panel)"/>
+      <path d="M728 202 764 185 764 226 728 243Z" stroke="#FFF4D6" stroke-opacity=".55" stroke-width="1.5"/>
+      <path d="M720 256V338M720 318 692 352M720 318 748 352M720 318 720 360" stroke="#3A2F25" stroke-width="6" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- camera on a tripod -->
+  <g class="cam-float">
+    <path d="M880 188 920 207 880 226 840 207Z" fill="url(#camTop)"/>
+    <path d="M840 207 880 226 880 270 840 251Z" fill="url(#camLeft)"/>
+    <path d="M880 226 920 207 920 251 880 270Z" fill="url(#camRight)"/>
+    <circle cx="900" cy="243" r="15" fill="#120D08" stroke="#6A5A48" stroke-width="2"/>
+    <circle cx="900" cy="243" r="9.5" fill="url(#lens)"/>
+    <circle cx="896" cy="239" r="2.6" fill="#FFF4D6" opacity=".9"/>
+    <rect x="850" y="190" width="14" height="7" rx="2" fill="#E29A2E" transform="rotate(24 857 193)"/>
+    <path d="M880 270V300M880 300 848 352M880 300 912 352M880 300 880 362" stroke="#3A2F25" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <!-- floating cards -->
+  <g class="card-float" filter="url(#cardShadow)">
+    <rect x="925" y="108" width="155" height="60" rx="14" fill="url(#card)" stroke="#6B5130"/>
+    <text x="941" y="132" fill="#F6EBD9" font-size="13" font-weight="700">Northlight Studio</text>
+    <text x="941" y="153" fill="#F5B84B" font-size="13" font-weight="700">$65 / hr  ·  ★ 4.9</text>
+  </g>
+  <g class="card-float-later" filter="url(#cardShadow)">
+    <rect x="920" y="306" width="160" height="56" rx="14" fill="url(#card)" stroke="#6B5130"/>
+    <circle cx="942" cy="334" r="10" fill="#2F9E6B"/>
+    <path d="m937.5 334 3.2 3.2 6-6.4" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="960" y="331" fill="#F6EBD9" font-size="12.5" font-weight="700">Booking confirmed</text>
+    <text x="960" y="348" fill="#CDBA97" font-size="11.5">Sat  ·  10:00 – 12:00</text>
+  </g>
+</svg>
