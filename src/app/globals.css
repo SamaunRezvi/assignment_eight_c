@@ -55,7 +55,6 @@
 }
 
 :root {
-  --swiper-theme-color: var(--primary);
   --background: oklch(0.975 0.012 85);
   --foreground: oklch(0.22 0.015 60);
   --card: oklch(0.995 0.006 85);
@@ -145,6 +144,10 @@
 }
 
 @layer components {
+  /* Swiper declares its own theme color on :root, so it is overridden at the component level. */
+  .swiper {
+    --swiper-theme-color: var(--primary);
+  }
   .section-title {
     @apply font-heading text-3xl font-semibold tracking-tight sm:text-4xl;
   }
