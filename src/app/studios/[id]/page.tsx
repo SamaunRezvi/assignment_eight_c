@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { StudioDetail } from "@/components/studios/studio-detail";
 
-const API_URL = (process.env.API_URL ?? "http://localhost:5000").replace(/\/$/, "");
+const API_URL = (process.env.API_URL ?? "http://localhost:5000").trim().replace(/\/+$/, "");
 
 export async function generateMetadata({ params }: PageProps<"/studios/[id]">): Promise<Metadata> {
   const { id } = await params;

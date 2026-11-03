@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BETTER_AUTH_URL: http://localhost:3000
-      BETTER_AUTH_SECRET: ci-build-secret-with-more-than-32-characters
+      BETTER_AUTH_SECRET: ci-dummy-value-not-a-real-secret-000000
       MONGODB_URI: mongodb://localhost:27017
-      API_JWT_SECRET: ci-build-secret-with-more-than-32-characters
+      API_JWT_SECRET: ci-dummy-value-not-a-real-secret-000000
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
