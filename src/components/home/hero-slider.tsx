@@ -83,7 +83,7 @@ export function HeroSlider() {
                       <ArrowRight data-icon="inline-end" />
                     </Link>
                     <Link
-                      href="/add-studio"
+                      href="/studios"
                       className={cn(
                         buttonVariants({ variant: "outline", size: "lg" }),
                         "border-white/40 bg-white/10 text-white backdrop-blur hover:bg-white/20 hover:text-white dark:bg-white/10 dark:hover:bg-white/20",
