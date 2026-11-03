@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
-const apiUrl = (process.env.API_URL ?? "http://localhost:5000").replace(/\/$/, "");
+// Pasted environment values often carry stray whitespace, which would invalidate the rewrite.
+const apiUrl = (process.env.API_URL ?? "http://localhost:5000").trim().replace(/\/+$/, "");
+
+if (!/^https?:\/\//.test(apiUrl)) {
+  throw new Error(`API_URL must start with http:// or https:// (received "${apiUrl}")`);
+}
 
 const nextConfig: NextConfig = {
   agentRules: false,
