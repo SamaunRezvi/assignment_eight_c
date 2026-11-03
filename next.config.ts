@@ -3,6 +3,8 @@ import type { NextConfig } from "next";
 const apiUrl = (process.env.API_URL ?? "http://localhost:5000").replace(/\/$/, "");
 
 const nextConfig: NextConfig = {
+  agentRules: false,
+  poweredByHeader: false,
   turbopack: {
     rules: {
       "*.css": {
@@ -20,12 +22,26 @@ const nextConfig: NextConfig = {
   },
   /**
    * Serving the API under the site's own origin keeps the HTTPOnly auth cookie first-party
-   * (no third-party cookie blocking, no CORS preflights). `/api/auth/*` is a route handler
-   * and is matched by the filesystem before these rewrites apply.
+   * (no third-party cookie blocking, no CORS preflights). `fallback` rewrites run only after
+   * every page and dynamic route, so the `/api/auth/[...all]` route handler always wins.
    */
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Frame-Options", value: "DENY" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+          { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains" },
+        ],
+      },
+    ];
+  },
   async rewrites() {
     return {
-      afterFiles: [{ source: "/api/:path*", destination: `${apiUrl}/api/:path*` }],
+      fallback: [{ source: "/api/:path*", destination: `${apiUrl}/api/:path*` }],
     };
   },
 };

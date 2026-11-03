@@ -55,6 +55,7 @@
 }
 
 :root {
+  --swiper-theme-color: var(--primary);
   --background: oklch(0.975 0.012 85);
   --foreground: oklch(0.22 0.015 60);
   --card: oklch(0.995 0.006 85);
