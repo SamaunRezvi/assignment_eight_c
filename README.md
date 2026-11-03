@@ -201,6 +201,7 @@ Seed demo studios from the API repository with `npm run seed`.
 | `npm run build` | Create a production build    |
 | `npm run start` | Serve the production build   |
 | `npm run lint`  | Check the code with ESLint   |
+| `npm run typecheck` | Generate route types and type-check |
 
 ### Security notes
 
