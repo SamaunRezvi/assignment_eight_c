@@ -3,12 +3,14 @@ import { Fraunces, Inter } from "next/font/google";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { Providers } from "@/components/providers";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
 const fraunces = Fraunces({ variable: "--font-fraunces", subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "StudioSpace | Rent creative studios by the hour",
     template: "%s | StudioSpace",
@@ -16,6 +18,7 @@ export const metadata: Metadata = {
   description:
     "StudioSpace is a peer-to-peer marketplace for photo studios, film stages, podcast lounges, music suites and art workshops. Discover, compare and book creative spaces by the hour.",
   applicationName: "StudioSpace",
+  openGraph: { type: "website", siteName: "StudioSpace", locale: "en_US" },
 };
 
 export const viewport: Viewport = {
