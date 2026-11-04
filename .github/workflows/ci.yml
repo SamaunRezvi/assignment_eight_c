@@ -15,7 +15,7 @@ jobs:
       API_JWT_SECRET: ci-dummy-value-not-a-real-secret-000000
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
