@@ -116,7 +116,7 @@ export function StudiosExplorer() {
           </Button>
         </div>
 
-        <div className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1" role="group" aria-label="Filter by category">
+        <div className="chip-scroll -mx-1 flex gap-2 overflow-x-auto px-1 pb-3" role="group" aria-label="Filter by category">
           <button
             type="button"
             onClick={() => update({ category: undefined })}
