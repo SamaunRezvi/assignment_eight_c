@@ -39,6 +39,8 @@ const SLIDES = [
   },
 ];
 
+const HERO_HEADING_CLASS = "font-heading text-4xl font-semibold leading-[1.08] tracking-tight !text-white sm:text-5xl lg:text-6xl";
+
 export function HeroSlider() {
   return (
     <section aria-label="Featured creative spaces" className="relative isolate overflow-hidden bg-black">
@@ -73,9 +75,12 @@ export function HeroSlider() {
                     <span className="size-1.5 rounded-full bg-primary" />
                     {slide.eyebrow}
                   </p>
-                  <h1 className="font-heading text-4xl font-semibold leading-[1.08] tracking-tight !text-white sm:text-5xl lg:text-6xl">
-                    {slide.title}
-                  </h1>
+                  {/* Only the first slide is the page's h1; the rest are h2 so the document keeps a single top-level heading. */}
+                  {index === 0 ? (
+                    <h1 className={HERO_HEADING_CLASS}>{slide.title}</h1>
+                  ) : (
+                    <h2 className={HERO_HEADING_CLASS}>{slide.title}</h2>
+                  )}
                   <p className="max-w-xl text-base leading-relaxed text-white/80 sm:text-lg">{slide.copy}</p>
                   <div className="flex flex-wrap gap-3 pt-2">
                     <Link href="/studios" className={buttonVariants({ size: "lg" })}>
