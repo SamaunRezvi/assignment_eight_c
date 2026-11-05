@@ -219,6 +219,13 @@ Seed demo studios from the API repository with `npm run seed`.
 | `npm run start` | Serve the production build   |
 | `npm run lint`  | Check the code with ESLint   |
 | `npm run typecheck` | Generate route types and type-check |
+| `npm test`      | Run the unit tests with Vitest |
+
+### Tests
+
+Vitest covers the pieces that decide what the user sees and what the API accepts: the password rules, the booking,
+studio and review form schemas, safe post-login redirects, price, date and time formatting, the category catalogue and
+the booking status filter. GitHub Actions runs lint, type-check, tests and a production build on every push.
 
 ### Security notes
 
