@@ -166,6 +166,23 @@ Use these demo accounts to explore without registering. You can also create your
 The examiner account already owns a studio, has bookings in every status (Pending, Confirmed, Completed, Cancelled),
 incoming booking requests and saved studios, so every page has something to show.
 
+### How the two accounts work together
+
+There is no separate "host" or "guest" account type. Every user can list studios (acting as a **host**) and book other
+people's studios (acting as a **guest**), and the app shows the right tools for whichever role applies to a booking.
+
+| Account                      | Hosts                          | Books                         |
+| :--------------------------- | :----------------------------- | :---------------------------- |
+| `examiner@studiospace.test`  | Skyline Rooftop Photo Loft     | Harbor Sound Podcast Studio   |
+| `host.demo@studiospace.test` | Harbor Sound Podcast Studio    | Skyline Rooftop Photo Loft    |
+
+To see a full booking from both sides, open the site in two browsers (or one normal and one private window):
+
+1. As the guest, open a studio owned by the other account and choose **Book Workspace Now**. The request starts as **Pending**.
+2. As the host, open **My Bookings** then **Booking requests**, and **Confirm** it. Confirmed slots can no longer be booked by anyone else.
+3. Back as the guest, try an overlapping time on the same studio. The request is rejected with a clear "already booked" message.
+4. The guest can download a PDF receipt for confirmed bookings, and the host can mark a finished session as **Completed**.
+
 <br />
 
 ## Getting Started
