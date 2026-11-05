@@ -83,8 +83,8 @@ export function StudioDetail({ id }: { id: string }) {
         Back to all studios
       </Link>
 
-      <div className="grid gap-10 lg:grid-cols-12">
-        <div className="space-y-10 lg:col-span-8">
+      <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+        <div className="min-w-0 space-y-10 lg:col-span-8">
           <GalleryCarousel images={images} title={studio.title} />
 
           <header className="space-y-4">

@@ -17,7 +17,7 @@ export function GalleryCarousel({ images, title }: { images: string[]; title: st
   const many = images.length > 1;
 
   return (
-    <div className="space-y-3">
+    <div className="w-full min-w-0 space-y-3">
       <Swiper
         modules={[FreeMode, Navigation, Pagination, Thumbs]}
         navigation={many}
