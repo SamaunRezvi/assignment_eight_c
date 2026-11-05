@@ -1,19 +1,23 @@
 "use client";
 
-import { CalendarX, Inbox, ServerCrash } from "lucide-react";
+import { CalendarX, Filter, Inbox, ServerCrash } from "lucide-react";
+import { useState } from "react";
 import { RequireAuth } from "@/components/auth/require-auth";
 import { BookingCard } from "@/components/bookings/booking-card";
+import { StatusFilter } from "@/components/bookings/status-filter";
 import { EmptyState } from "@/components/shared/empty-state";
 import { PageHeader } from "@/components/shared/page-header";
 import { ListSkeleton } from "@/components/shared/skeletons";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useHostedBookings, useMyBookings } from "@/hooks/use-booking-queries";
+import { countByFilter, filterBookings, type BookingFilter } from "@/lib/booking-filter";
 
 function BookingList({ perspective }: { perspective: "guest" | "host" }) {
   const guest = useMyBookings(perspective === "guest");
   const host = useHostedBookings(perspective === "host");
   const { data, isPending, isError, refetch } = perspective === "guest" ? guest : host;
+  const [filter, setFilter] = useState<BookingFilter>("All");
 
   if (isPending) return <ListSkeleton rows={3} />;
 
@@ -50,12 +54,30 @@ function BookingList({ perspective }: { perspective: "guest" | "host" }) {
     );
   }
 
+  const visible = filterBookings(data, filter);
+
   return (
-    <ul className="space-y-4">
-      {data.map((booking) => (
-        <BookingCard key={booking.id} booking={booking} perspective={perspective} />
-      ))}
-    </ul>
+    <>
+      <StatusFilter value={filter} counts={countByFilter(data)} onChange={setFilter} />
+      {visible.length === 0 ? (
+        <EmptyState
+          icon={Filter}
+          title={`No ${filter.toLowerCase()} bookings`}
+          description="Nothing matches this status right now. Show everything to see your full history."
+          secondary={
+            <Button size="lg" variant="outline" onClick={() => setFilter("All")}>
+              Show all bookings
+            </Button>
+          }
+        />
+      ) : (
+        <ul className="space-y-4">
+          {visible.map((booking) => (
+            <BookingCard key={booking.id} booking={booking} perspective={perspective} />
+          ))}
+        </ul>
+      )}
+    </>
   );
 }
 
